@@ -13,6 +13,9 @@
   },
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
+    "build": "./quartz/bootstrap-cli.mjs build",
+    "dev": "./quartz/bootstrap-cli.mjs build --serve",
+    "sync": "./quartz/bootstrap-cli.mjs sync",
     "docs": "npx quartz build --serve -d docs",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
@@ -85,7 +88,7 @@
     "rfdc": "^1.4.1",
     "satori": "^0.19.1",
     "serve-handler": "^6.1.6",
-    "sharp": "^0.34.5",
+    "sharp": "^0.35.5",
     "shiki": "^1.26.2",
     "source-map-support": "^0.5.21",
     "to-vfile": "^8.0.0",
