@@ -33,8 +33,6 @@ This is my shrine for thoughts — a minimalist digital garden where essays, poe
 If something here resonated with you or sparked a thought:
 
 - **Email**: [hasan.nirjhor@yahoo.com](mailto:hasan.nirjhor@yahoo.com)
-- **GitHub**: [@nirjhor-7](https://github.com/nirjhor-7)
-- **Direct Note**: [[Get in Touch]]
 
 > *“Where the fear has gone there will be nothing. Only I will remain.”* — Frank Herbert, *Dune*
 
