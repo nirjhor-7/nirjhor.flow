@@ -416,32 +416,22 @@ p {
   color: var(--color-tx-normal) !important;
 }
 
-// Steph Ango signature divider: "• • •" (Identical 1:1 match to stephango.com)
+// Steph Ango minimal divider line (1:1 match to stephango.com)
 hr,
 article hr {
   width: 100% !important;
   border: 0 !important;
-  background: none !important;
-  text-align: center !important;
-  margin: 3.5rem auto !important;
-  height: 24px !important;
-  line-height: 24px !important;
-  overflow: visible !important;
-  position: relative !important;
+  height: 1px !important;
+  margin: 2.25rem 0 !important;
+  background: var(--color-ui-normal) !important;
   display: block !important;
+  position: static !important;
+  box-shadow: none !important;
 
-  &:before {
-    content: "" !important;
-    display: block !important;
-    position: absolute !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 6px !important;
-    height: 6px !important;
-    border-radius: 50% !important;
-    background-color: var(--color-tx-faint) !important;
-    box-shadow: -38px 0 0 0 var(--color-tx-faint), 38px 0 0 0 var(--color-tx-faint) !important;
+  &:before,
+  &:after {
+    display: none !important;
+    content: none !important;
   }
 }
 
