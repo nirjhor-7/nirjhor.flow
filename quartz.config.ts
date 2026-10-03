@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     // This is the corrected URL for your GitHub Pages setup
     baseUrl: "nirjhor-7.github.io/nirjhor.flow",
     ignorePatterns: ["private/**", "templates/**", ".obsidian/**"],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,

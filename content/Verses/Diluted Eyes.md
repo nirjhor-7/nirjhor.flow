@@ -1,8 +1,9 @@
 ---
 title: Diluted Eyes
+date: 2026-02-06
 draft: false
 tags:
-  -
+  - verses
 ---
 
 Bleed my paraselene, <br>

@@ -1,8 +1,9 @@
 ---
 title: Well, Iris
+date: 2025-12-01
 draft: false
 tags:
-  -
+  - verses
 ---
 
 Raining since the morning <br>

@@ -1,8 +1,9 @@
 ---
 title: Train Dreams
+date: 2026-04-14
 draft: false
 tags:
-  -
+  - verses
 ---
 
 Time goes away, <br>
