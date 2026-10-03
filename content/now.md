@@ -4,7 +4,7 @@ title: Now
 
 _What I'm doing now._
 
-- Figure out my life.
+- Figuring out my life?
 
 
 
