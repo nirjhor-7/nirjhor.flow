@@ -4,9 +4,9 @@ title: Now
 
 ### What I'm doing now.
 
-*building* [Later, Gators](www.latergators.live)
-*figuring out life.*
-*writing.*
+*building* [Later, Gators](https://www.latergators.live/)
+<br>*figuring out life.*
+<br> *writing.*
 
 ---
 
