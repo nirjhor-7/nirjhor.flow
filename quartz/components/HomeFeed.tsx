@@ -27,7 +27,14 @@ function isVerse(file: QuartzPluginData): boolean {
 }
 
 function getFileDate(cfg: GlobalConfiguration, file: QuartzPluginData): Date {
-  const d = getDate(cfg, file) ?? file.dates?.published ?? file.dates?.created ?? file.dates?.modified
+  const fmDate = file.frontmatter?.date ?? file.frontmatter?.published ?? file.frontmatter?.created
+  if (fmDate) {
+    let s = String(fmDate).trim()
+    if (/^\d{4}-\d{2}-\d{2}$/.test(s)) s = `${s}T00:00:00`
+    const dt = new Date(s)
+    if (!isNaN(dt.getTime()) && dt.getTime() > 0) return dt
+  }
+  const d = getDate(cfg, file) ?? file.dates?.created ?? file.dates?.published ?? file.dates?.modified
   if (d) {
     const dt = new Date(d)
     if (!isNaN(dt.getTime()) && dt.getTime() > 0) return dt
@@ -121,6 +128,7 @@ export function HomeFeed(props: QuartzComponentProps) {
 
   // Add tags
   for (const tag of tags) {
+    if (tag.toLowerCase() === "verses") continue
     topicItems.push({
       label: tag,
       href: resolveRelative("index" as FullSlug, `tags/${tag}` as FullSlug),

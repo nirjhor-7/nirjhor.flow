@@ -1,4 +1,5 @@
 import fs from "fs"
+import { execFileSync } from "child_process"
 import { Repository } from "@napi-rs/simple-git"
 import { QuartzTransformerPlugin } from "../types"
 import path from "path"
@@ -81,6 +82,19 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
                 try {
                   const relativePath = path.relative(repositoryWorkdir, fullFp)
                   modified ||= await repo.getFileLatestModifiedDateAsync(relativePath)
+                  if (!created) {
+                    try {
+                      const logOut = execFileSync(
+                        "git",
+                        ["log", "--follow", "--format=%aI", "--", relativePath],
+                        { cwd: repositoryWorkdir, encoding: "utf-8", stdio: ["ignore", "pipe", "ignore"] },
+                      ).trim()
+                      const lines = logOut.split("\n").filter(Boolean)
+                      if (lines.length > 0) {
+                        created = lines[lines.length - 1]
+                      }
+                    } catch {}
+                  }
                 } catch {
                   console.log(
                     styleText(
@@ -92,6 +106,7 @@ export const CreatedModifiedDate: QuartzTransformerPlugin<Partial<Options>> = (u
               }
             }
 
+            published ||= created
             file.data.dates = {
               created: coerceDate(fp, created),
               modified: coerceDate(fp, modified),
