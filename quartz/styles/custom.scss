@@ -200,84 +200,64 @@ header .spacer {
   flex: 1 1 auto !important;
 }
 
-// Control buttons (Search & Darkmode)
-.page-header header .search,
-.page-header header .darkmode,
-header .search,
-header .darkmode {
-  display: inline-flex !important;
-  align-items: center !important;
-}
-
-.page-header header .search-button,
-header .search-button {
-  background: var(--color-bg-secondary) !important;
+// Control buttons (Darkmode pill switch matching Steph Ango's theme toggle)
+header .darkmode,
+.darkmode {
+  width: 36px !important;
+  height: 20px !important;
+  border-radius: 20px !important;
   border: 1px solid var(--color-ui-normal) !important;
-  border-radius: 6px !important;
-  color: var(--color-tx-muted) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
   cursor: pointer !important;
-  padding: 0.35rem 0.75rem !important;
-  height: 32px !important;
+  position: relative !important;
+  display: block !important;
   box-sizing: border-box !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.45rem !important;
-  font-size: 0.82rem !important;
-  font-family: inherit !important;
-  transition: all 0.15s ease !important;
+  transition: border-color 0.15s ease !important;
 
   &:hover {
-    color: var(--color-tx-normal) !important;
-    border-color: var(--color-ui-hover) !important;
-    background: var(--color-ui-normal) !important;
-  }
+    border-color: var(--color-action) !important;
 
-  svg {
-    width: 13px !important;
-    height: 13px !important;
-    margin: 0 !important;
-
-    .search-path {
-      stroke: currentColor !important;
+    svg {
+      fill: var(--color-action) !important;
     }
   }
 
-  p {
-    margin: 0 !important;
-    color: inherit !important;
-    font-size: 0.82rem !important;
+  svg {
+    position: absolute !important;
+    top: 2px !important;
+    width: 14px !important;
+    height: 14px !important;
+    transition: left 0.15s ease, fill 0.15s ease !important;
+    fill: var(--color-tx-muted) !important;
+  }
+
+  .dayIcon {
+    left: 3px !important;
+    display: block !important;
+  }
+
+  .nightIcon {
+    display: none !important;
   }
 }
 
-.page-header header .darkmode,
-header .darkmode {
-  background: var(--color-bg-secondary) !important;
-  border: 1px solid var(--color-ui-normal) !important;
-  border-radius: 6px !important;
-  color: var(--color-tx-muted) !important;
-  cursor: pointer !important;
-  padding: 0 !important;
-  width: 32px !important;
-  height: 32px !important;
-  box-sizing: border-box !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  position: relative !important;
-  transition: all 0.15s ease !important;
-
-  &:hover {
-    color: var(--color-tx-normal) !important;
-    border-color: var(--color-ui-hover) !important;
-    background: var(--color-ui-normal) !important;
-  }
+:root[saved-theme="dark"] header .darkmode,
+:root[saved-theme="dark"] .darkmode {
+  border-color: var(--color-ui-normal) !important;
 
   svg {
-    position: static !important;
-    width: 14px !important;
-    height: 14px !important;
-    fill: currentColor !important;
-    transition: transform 0.2s ease !important;
+    fill: var(--color-tx-normal) !important;
+  }
+
+  .dayIcon {
+    display: none !important;
+  }
+
+  .nightIcon {
+    left: 17px !important;
+    display: block !important;
   }
 }
 
@@ -398,25 +378,82 @@ p {
   color: var(--color-tx-normal) !important;
 }
 
-// Steph Ango signature divider: "•••"
+// Steph Ango signature divider: "• • •" (Identical 1:1 match to stephango.com)
 hr,
 article hr {
+  width: 100% !important;
   border: 0 !important;
   background: none !important;
   text-align: center !important;
-  margin: 3rem auto !important;
-  height: auto !important;
-  line-height: 1 !important;
+  margin: 3.5rem auto !important;
+  height: 24px !important;
+  line-height: 24px !important;
   overflow: visible !important;
+  position: relative !important;
+  display: block !important;
 
   &:before {
-    content: "•••" !important;
-    letter-spacing: 1.25em !important;
-    margin-left: 1.25em !important;
-    color: var(--color-tx-faint) !important;
-    font-size: 0.9em !important;
-    display: inline-block !important;
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 6px !important;
+    height: 6px !important;
+    border-radius: 50% !important;
+    background-color: var(--color-tx-faint) !important;
+    box-shadow: -38px 0 0 0 var(--color-tx-faint), 38px 0 0 0 var(--color-tx-faint) !important;
   }
+}
+
+// Section labels in Steph Ango style
+.section-label {
+  font-size: 0.95rem !important;
+  color: var(--color-tx-muted) !important;
+  font-weight: 500 !important;
+  margin: 2.5rem 0 0.75rem 0 !important;
+  text-decoration: none !important;
+  display: block !important;
+
+  a {
+    color: var(--color-tx-muted) !important;
+    text-decoration: none !important;
+
+    &:hover {
+      color: var(--color-action) !important;
+    }
+  }
+}
+
+.metadata {
+  font-size: 0.85rem !important;
+  color: var(--color-tx-muted) !important;
+  margin: 0.25rem 0 0.75rem 0 !important;
+}
+
+// Steph Ango tabular date list for Writing / Verses
+article ul > li:has(.date) {
+  list-style: none !important;
+  display: flex !important;
+  align-items: baseline !important;
+  padding: 0.25rem 0 !important;
+  margin: 0.1rem 0 !important;
+
+  .date {
+    color: var(--color-tx-muted) !important;
+    font-size: 0.88rem !important;
+    font-variant-numeric: tabular-nums !important;
+    flex-shrink: 0 !important;
+    width: 5.75rem !important;
+    letter-spacing: 0.02em !important;
+  }
+}
+
+article ul:has(> li > .date) {
+  list-style: none !important;
+  padding-left: 0 !important;
+  margin: 0.75rem 0 1.5rem 0 !important;
 }
 
 // Clear Quartz default pill / badge styling on wikilinks
@@ -475,8 +512,8 @@ blockquote {
   }
 }
 
-// Lists (Steph Ango list styling with faint bullet markers)
-article ul {
+// Lists (Steph Ango standard list styling with faint bullet markers)
+article ul:not(:has(> li > .date)) {
   padding-left: 1.5rem !important;
   margin: 1.25rem 0 !important;
   list-style-type: disc !important;
@@ -622,14 +659,14 @@ pre {
   }
 }
 
-// Standard Clean Footer
+// Standard Clean Footer (Steph Ango style, NO GitHub)
 footer {
   width: 100% !important;
   max-width: 100% !important;
-  margin-top: 4.5rem !important;
+  margin-top: 5rem !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  padding: 2rem 0 3rem 0 !important;
+  padding: 2.5rem 0 3.5rem 0 !important;
   border-top: 1px solid var(--color-ui-normal) !important;
   font-size: 0.85rem !important;
   color: var(--color-tx-muted) !important;
@@ -666,28 +703,5 @@ footer {
       color: var(--color-action) !important;
       text-decoration-color: currentColor !important;
     }
-  }
-}
-
-// Search Modal Polish
-.search-container {
-  backdrop-filter: blur(8px) !important;
-  background: rgba(16, 15, 15, 0.4) !important;
-}
-
-.search-space {
-  > input {
-    border: 1px solid var(--color-ui-normal) !important;
-    border-radius: 8px !important;
-    background: var(--color-bg-primary) !important;
-    color: var(--color-tx-normal) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
-  }
-
-  > .search-layout {
-    border: 1px solid var(--color-ui-normal) !important;
-    border-radius: 8px !important;
-    background: var(--color-bg-primary) !important;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
   }
 }

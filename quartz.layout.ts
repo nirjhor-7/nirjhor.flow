@@ -6,13 +6,11 @@ export const sharedPageComponents: SharedLayout = {
   header: [
     Component.PageTitle(),
     Component.Spacer(),
-    Component.Search(),
     Component.Darkmode(),
   ],
   afterBody: [Component.Backlinks()],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/nirjhor-7",
       Contact: "mailto:hasan.nirjhor@yahoo.com",
     },
   }),
