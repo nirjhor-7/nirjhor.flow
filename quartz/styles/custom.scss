@@ -1,19 +1,57 @@
 @use "./base.scss";
 
 // ==============================================================================
-// SWISS MINIMALIST (Clean, Standard Digital Garden Typography)
+// STEPH ANGO (stephango.com) FLEXOKI MINIMALIST THEME
 // ==============================================================================
 
 :root {
-  --ui-border: #e4e4e7;
-  --ui-link-underline: #d4d4d8;
-  --ui-muted: #71717a;
+  // Steph Ango Flexoki Light Palette
+  --color-bg-primary: #FFFCF0;
+  --color-bg-secondary: #F2F0E5;
+  --color-tx-normal: #100F0F;
+  --color-tx-muted: #6F6E69;
+  --color-tx-faint: #B7B5AC;
+  --color-ui-normal: #E6E4D9;
+  --color-ui-hover: #DAD8CE;
+  --color-action: #24837B;
+  --color-action-hover: #124A45;
+  --color-highlight: rgba(246, 226, 160, 0.45);
+
+  --wrap-normal: 38em;
+
+  // Quartz Variable Mapping
+  --light: var(--color-bg-primary);
+  --lightgray: var(--color-bg-secondary);
+  --gray: var(--color-tx-muted);
+  --darkgray: var(--color-tx-normal);
+  --dark: var(--color-tx-normal);
+  --secondary: var(--color-action);
+  --tertiary: var(--color-action-hover);
+  --highlight: var(--color-highlight);
 }
 
 :root[saved-theme="dark"] {
-  --ui-border: #27272a;
-  --ui-link-underline: #3f3f46;
-  --ui-muted: #a1a1aa;
+  // Steph Ango Flexoki Dark Palette
+  --color-bg-primary: #100F0F;
+  --color-bg-secondary: #1C1B1A;
+  --color-tx-normal: #CECDC3;
+  --color-tx-muted: #878580;
+  --color-tx-faint: #575653;
+  --color-ui-normal: #282726;
+  --color-ui-hover: #343331;
+  --color-action: #3AA99F;
+  --color-action-hover: #5ABDAC;
+  --color-highlight: rgba(58, 45, 4, 0.55);
+
+  // Quartz Variable Mapping
+  --light: var(--color-bg-primary);
+  --lightgray: var(--color-bg-secondary);
+  --gray: var(--color-tx-muted);
+  --darkgray: var(--color-tx-normal);
+  --dark: var(--color-tx-normal);
+  --secondary: var(--color-action);
+  --tertiary: var(--color-action-hover);
+  --highlight: var(--color-highlight);
 }
 
 // Global page reset & standard central reading column
@@ -21,10 +59,16 @@ html {
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
+  background-color: var(--color-bg-primary);
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+
+::selection {
+  background-color: var(--color-highlight);
+  color: inherit;
 }
 
 body {
@@ -33,8 +77,12 @@ body {
   width: 100% !important;
   min-height: 100vh;
   display: block !important;
-  background: var(--light) !important;
-  color: var(--darkgray) !important;
+  background: var(--color-bg-primary) !important;
+  color: var(--color-tx-normal) !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", "IBM Plex Sans", -ui-sans-serif, sans-serif !important;
+  font-size: 1.125rem !important;
+  line-height: 1.6 !important;
+  letter-spacing: -0.005em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -44,13 +92,13 @@ body {
   display: none !important;
 }
 
-// Standard Central Reading Column
+// Steph Ango Central Reading Column (38em / ~610px)
 #quartz-root.page,
 .page {
-  max-width: 720px !important;
+  max-width: var(--wrap-normal, 38em) !important;
   width: 100% !important;
   margin: 0 auto !important;
-  padding: 0 1.5rem 5rem !important;
+  padding: 0 1.5rem 6rem !important;
   box-sizing: border-box !important;
   display: block !important;
 }
@@ -110,10 +158,10 @@ header {
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important;
-  padding: 2rem 0 1.25rem !important;
+  padding: 2.5rem 0 1.5rem !important;
   margin: 0 0 2rem 0 !important;
-  border-bottom: 1px solid var(--ui-border) !important;
-  gap: 0.75rem !important;
+  border-bottom: 1px solid var(--color-ui-normal) !important;
+  gap: 1rem !important;
   box-sizing: border-box !important;
 }
 
@@ -126,9 +174,9 @@ header .page-title {
   padding: 0 !important;
   border: none !important;
   border-bottom: none !important;
-  font-size: 1.15rem !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
   white-space: nowrap !important;
   line-height: 1 !important;
 }
@@ -137,8 +185,13 @@ header .page-title {
 .page-header .page-title a,
 header .page-title a {
   text-decoration: none !important;
-  color: var(--dark) !important;
+  color: var(--color-tx-normal) !important;
   border: none !important;
+  transition: color 0.15s ease !important;
+
+  &:hover {
+    color: var(--color-action) !important;
+  }
 }
 
 // Spacer pushes controls to the right
@@ -158,30 +211,30 @@ header .darkmode {
 
 .page-header header .search-button,
 header .search-button {
-  background: transparent !important;
-  border: 1px solid var(--ui-border) !important;
+  background: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-ui-normal) !important;
   border-radius: 6px !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
   cursor: pointer !important;
-  padding: 0.3rem 0.65rem !important;
+  padding: 0.35rem 0.75rem !important;
   height: 32px !important;
   box-sizing: border-box !important;
   display: inline-flex !important;
   align-items: center !important;
   gap: 0.45rem !important;
-  font-size: 0.85rem !important;
-  font-family: var(--bodyFont) !important;
+  font-size: 0.82rem !important;
+  font-family: inherit !important;
   transition: all 0.15s ease !important;
 
   &:hover {
-    color: var(--dark) !important;
-    border-color: var(--dark) !important;
-    background: var(--lightgray) !important;
+    color: var(--color-tx-normal) !important;
+    border-color: var(--color-ui-hover) !important;
+    background: var(--color-ui-normal) !important;
   }
 
   svg {
-    width: 14px !important;
-    height: 14px !important;
+    width: 13px !important;
+    height: 13px !important;
     margin: 0 !important;
 
     .search-path {
@@ -198,10 +251,10 @@ header .search-button {
 
 .page-header header .darkmode,
 header .darkmode {
-  background: transparent !important;
-  border: 1px solid var(--ui-border) !important;
+  background: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-ui-normal) !important;
   border-radius: 6px !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
   cursor: pointer !important;
   padding: 0 !important;
   width: 32px !important;
@@ -214,15 +267,15 @@ header .darkmode {
   transition: all 0.15s ease !important;
 
   &:hover {
-    color: var(--dark) !important;
-    border-color: var(--dark) !important;
-    background: var(--lightgray) !important;
+    color: var(--color-tx-normal) !important;
+    border-color: var(--color-ui-hover) !important;
+    background: var(--color-ui-normal) !important;
   }
 
   svg {
     position: static !important;
-    width: 15px !important;
-    height: 15px !important;
+    width: 14px !important;
+    height: 14px !important;
     fill: currentColor !important;
     transition: transform 0.2s ease !important;
   }
@@ -237,7 +290,7 @@ header .darkmode {
   margin: 0 0 0.75rem 0 !important;
   padding: 0 !important;
   font-size: 0.85rem !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
 }
 
 .breadcrumb-element {
@@ -248,24 +301,23 @@ header .darkmode {
   padding: 0 !important;
 
   a {
-    color: var(--gray) !important;
+    color: var(--color-tx-muted) !important;
     text-decoration: none !important;
     transition: color 0.15s ease !important;
 
     &:hover {
-      color: var(--dark) !important;
+      color: var(--color-action) !important;
     }
   }
 
   p {
     margin: 0 !important;
     padding: 0 !important;
-    color: var(--gray) !important;
-    opacity: 0.5 !important;
+    color: var(--color-tx-faint) !important;
   }
 
   &:last-child {
-    color: var(--darkgray) !important;
+    color: var(--color-tx-normal) !important;
   }
 }
 
@@ -274,15 +326,14 @@ h1.article-title {
   font-size: 2.15rem !important;
   font-weight: 700 !important;
   letter-spacing: -0.035em !important;
-  line-height: 1.2 !important;
+  line-height: 1.25 !important;
   margin: 0.25rem 0 0.5rem !important;
-  color: var(--dark) !important;
+  color: var(--color-tx-normal) !important;
 }
 
 .content-meta {
-  font-family: var(--bodyFont) !important;
   font-size: 0.85rem !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
   margin: 0 0 2rem 0 !important;
   display: flex !important;
   align-items: center !important;
@@ -291,29 +342,28 @@ h1.article-title {
   > *:not(:last-child)::after {
     content: "•";
     margin-left: 0.6rem;
-    color: var(--gray);
-    opacity: 0.4;
+    color: var(--color-tx-faint);
   }
 }
 
-// Typography & Content Flow (Standard, Clean, Legible)
+// Typography & Content Flow (Steph Ango standards)
 article {
   width: 100% !important;
   max-width: 100% !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--headerFont) !important;
-  color: var(--dark) !important;
+  color: var(--color-tx-normal) !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
 }
 
 h1 {
-  font-size: 2rem !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.03em !important;
-  margin: 2rem 0 1rem !important;
+  font-size: 1.85rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.025em !important;
+  line-height: 1.25 !important;
+  margin: 2.25rem 0 1rem !important;
 }
 
 article > h1:first-child,
@@ -324,8 +374,9 @@ article > h2:first-child {
 h2 {
   font-size: 1.35rem !important;
   font-weight: 600 !important;
-  letter-spacing: -0.02em !important;
-  margin: 2.25rem 0 0.85rem !important;
+  letter-spacing: -0.015em !important;
+  line-height: 1.35 !important;
+  margin: 2.5rem 0 0.75rem !important;
   padding: 0 !important;
   border: none !important;
 }
@@ -333,26 +384,39 @@ h2 {
 h3 {
   font-size: 1.15rem !important;
   font-weight: 600 !important;
-  letter-spacing: -0.015em !important;
-  margin: 1.75rem 0 0.5rem !important;
+  letter-spacing: -0.01em !important;
+  line-height: 1.4 !important;
+  margin: 2rem 0 0.5rem !important;
   padding: 0 !important;
   border: none !important;
 }
 
 p {
-  line-height: 1.75 !important;
-  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  font-size: 1.125rem !important;
   margin: 1.25rem 0 !important;
-  color: var(--darkgray) !important;
+  color: var(--color-tx-normal) !important;
 }
 
-// Horizontal dividers (Standard markdown ---)
-hr {
-  display: block !important;
-  width: 100% !important;
-  margin: 2.25rem 0 !important;
-  border: none !important;
-  border-top: 1px solid var(--ui-border) !important;
+// Steph Ango signature divider: "•••"
+hr,
+article hr {
+  border: 0 !important;
+  background: none !important;
+  text-align: center !important;
+  margin: 3rem auto !important;
+  height: auto !important;
+  line-height: 1 !important;
+  overflow: visible !important;
+
+  &:before {
+    content: "•••" !important;
+    letter-spacing: 1.25em !important;
+    margin-left: 1.25em !important;
+    color: var(--color-tx-faint) !important;
+    font-size: 0.9em !important;
+    display: inline-block !important;
+  }
 }
 
 // Clear Quartz default pill / badge styling on wikilinks
@@ -366,18 +430,19 @@ article a.internal,
   line-height: inherit !important;
 }
 
-// Standard Content Links
-article a {
-  color: var(--dark) !important;
+// Steph Ango Underline Links with Cyan Hover
+article a,
+.center a {
+  color: inherit !important;
   text-decoration: underline !important;
-  text-decoration-color: var(--ui-link-underline) !important;
-  text-underline-offset: 3px !important;
+  text-decoration-color: var(--color-ui-hover) !important;
+  text-underline-offset: 0.18ex !important;
   text-decoration-thickness: 1px !important;
-  transition: text-decoration-color 0.15s ease, color 0.15s ease !important;
+  transition: color 0.15s ease, text-decoration-color 0.15s ease !important;
 
   &:hover {
-    color: var(--dark) !important;
-    text-decoration-color: var(--dark) !important;
+    color: var(--color-action) !important;
+    text-decoration-color: currentColor !important;
   }
 
   &[role="anchor"] {
@@ -391,69 +456,81 @@ h1:hover a[role="anchor"],
 h2:hover a[role="anchor"],
 h3:hover a[role="anchor"],
 h4:hover a[role="anchor"] {
-  opacity: 0.5 !important;
+  opacity: 0.4 !important;
 }
 
 // Blockquotes (Minimalist vertical bar)
 blockquote {
-  border-left: 2px solid var(--dark) !important;
+  border-left: 2px solid var(--color-ui-normal) !important;
   background: transparent !important;
   padding: 0.25rem 0 0.25rem 1.25rem !important;
   margin: 1.75rem 0 !important;
   font-style: italic !important;
-  color: var(--darkgray) !important;
+  color: var(--color-tx-muted) !important;
 
   p {
     margin: 0.35rem 0 !important;
-    line-height: 1.7 !important;
+    color: inherit !important;
+    line-height: 1.65 !important;
   }
 }
 
-// Standard Lists (Universal clean bulleted lists across all pages)
+// Lists (Steph Ango list styling with faint bullet markers)
 article ul {
   padding-left: 1.5rem !important;
-  margin: 1rem 0 1.5rem !important;
+  margin: 1.25rem 0 !important;
   list-style-type: disc !important;
 
   > li {
-    line-height: 1.75 !important;
-    margin: 0.4rem 0 !important;
+    line-height: 1.65 !important;
+    margin: 0.35rem 0 !important;
     padding: 0 !important;
     border: none !important;
-    color: var(--darkgray) !important;
+    color: var(--color-tx-normal) !important;
+
+    &::marker {
+      color: var(--color-tx-faint) !important;
+      font-size: 85% !important;
+    }
   }
 }
 
 article ol {
   padding-left: 1.5rem !important;
-  margin: 1rem 0 1.5rem !important;
+  margin: 1.25rem 0 !important;
 
   > li {
-    line-height: 1.75 !important;
-    margin: 0.4rem 0 !important;
-    color: var(--darkgray) !important;
+    line-height: 1.65 !important;
+    margin: 0.35rem 0 !important;
+    color: var(--color-tx-normal) !important;
+
+    &::marker {
+      color: var(--color-tx-muted) !important;
+    }
   }
 }
 
-// Code & Pre
+// Code & Pre (Flexoki 50 / 950 backgrounds)
 code {
   font-family: var(--codeFont) !important;
   font-size: 0.88em !important;
   padding: 0.15em 0.35em !important;
   border-radius: 4px !important;
-  background: var(--lightgray) !important;
-  color: var(--dark) !important;
+  background: var(--color-bg-secondary) !important;
+  border: 1px solid var(--color-ui-normal) !important;
+  color: var(--color-tx-normal) !important;
 }
 
 pre {
   border-radius: 6px !important;
-  border: 1px solid var(--ui-border) !important;
+  border: 1px solid var(--color-ui-normal) !important;
   padding: 1rem 1.25rem !important;
   margin: 1.5rem 0 !important;
-  background: var(--light) !important;
+  background: var(--color-bg-secondary) !important;
 
   > code {
     padding: 0 !important;
+    border: none !important;
     background: transparent !important;
     font-size: 0.88rem !important;
     line-height: 1.6 !important;
@@ -474,19 +551,20 @@ pre {
   font-family: var(--codeFont) !important;
   font-size: 0.75rem !important;
   padding: 0.15rem 0.45rem !important;
-  border: 1px solid var(--ui-border) !important;
+  border: 1px solid var(--color-ui-normal) !important;
   border-radius: 4px !important;
   text-decoration: none !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
+  background: var(--color-bg-secondary) !important;
   transition: all 0.15s ease !important;
 
   &:hover {
-    color: var(--dark) !important;
-    border-color: var(--dark) !important;
+    color: var(--color-action) !important;
+    border-color: var(--color-action) !important;
   }
 }
 
-// Backlinks
+// Backlinks (Steph Ango Card Grid)
 .page-footer {
   width: 100% !important;
   margin-top: 3.5rem !important;
@@ -500,34 +578,45 @@ pre {
 
 .backlinks {
   margin-top: 0 !important;
-  padding-top: 1.75rem !important;
-  border-top: 1px solid var(--ui-border) !important;
+  padding-top: 2rem !important;
+  border-top: 1px solid var(--color-ui-normal) !important;
 
   h3 {
     font-size: 0.8rem !important;
     text-transform: uppercase !important;
     letter-spacing: 0.08em !important;
-    color: var(--gray) !important;
-    margin: 0 0 0.85rem 0 !important;
+    color: var(--color-tx-muted) !important;
+    margin: 0 0 1rem 0 !important;
   }
 
   ul {
     list-style: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 0.75rem !important;
   }
 
   li {
-    margin: 0.4rem 0 !important;
-    font-size: 0.95rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
 
     a {
-      color: var(--dark) !important;
+      display: block !important;
+      padding: 0.75rem 1rem !important;
+      border: 1px solid var(--color-ui-normal) !important;
+      border-radius: 6px !important;
+      background: var(--color-bg-secondary) !important;
+      color: var(--color-tx-normal) !important;
       text-decoration: none !important;
+      font-size: 0.95rem !important;
+      line-height: 1.4 !important;
+      transition: all 0.15s ease !important;
 
       &:hover {
-        text-decoration: underline !important;
-        text-underline-offset: 3px !important;
+        border-color: var(--color-action) !important;
+        color: var(--color-action) !important;
       }
     }
   }
@@ -541,9 +630,9 @@ footer {
   margin-left: 0 !important;
   margin-right: 0 !important;
   padding: 2rem 0 3rem 0 !important;
-  border-top: 1px solid var(--ui-border) !important;
+  border-top: 1px solid var(--color-ui-normal) !important;
   font-size: 0.85rem !important;
-  color: var(--gray) !important;
+  color: var(--color-tx-muted) !important;
   box-sizing: border-box !important;
   display: flex !important;
   flex-direction: row !important;
@@ -554,7 +643,7 @@ footer {
 
   p {
     margin: 0 !important;
-    color: var(--gray) !important;
+    color: var(--color-tx-muted) !important;
     font-size: 0.85rem !important;
   }
 
@@ -567,13 +656,15 @@ footer {
   }
 
   a {
-    color: var(--gray) !important;
-    text-decoration: none !important;
+    color: var(--color-tx-muted) !important;
+    text-decoration: underline !important;
+    text-decoration-color: var(--color-ui-normal) !important;
+    text-underline-offset: 0.15ex !important;
     transition: color 0.15s ease !important;
 
     &:hover {
-      color: var(--dark) !important;
-      text-decoration: underline !important;
+      color: var(--color-action) !important;
+      text-decoration-color: currentColor !important;
     }
   }
 }
@@ -581,22 +672,22 @@ footer {
 // Search Modal Polish
 .search-container {
   backdrop-filter: blur(8px) !important;
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: rgba(16, 15, 15, 0.4) !important;
 }
 
 .search-space {
   > input {
-    border: 1px solid var(--ui-border) !important;
+    border: 1px solid var(--color-ui-normal) !important;
     border-radius: 8px !important;
-    background: var(--light) !important;
-    color: var(--dark) !important;
+    background: var(--color-bg-primary) !important;
+    color: var(--color-tx-normal) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
   }
 
   > .search-layout {
-    border: 1px solid var(--ui-border) !important;
+    border: 1px solid var(--color-ui-normal) !important;
     border-radius: 8px !important;
-    background: var(--light) !important;
+    background: var(--color-bg-primary) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
   }
 }
