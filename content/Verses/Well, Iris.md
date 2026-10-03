@@ -1,6 +1,6 @@
 ---
 title: Well, Iris
-date:
+date: 2025-12-01
 draft: false
 tags:
   - verses
