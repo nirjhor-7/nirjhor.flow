@@ -2,6 +2,5 @@
 title:
 date:
 tags:
-  - writings
-draft: false
+draft: true
 ---
