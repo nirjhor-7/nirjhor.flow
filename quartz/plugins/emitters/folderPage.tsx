@@ -13,6 +13,7 @@ import {
   joinSegments,
   pathToRoot,
   simplifySlug,
+  slugifyFilePath,
 } from "../../util/path"
 import { defaultListPageLayout, sharedPageComponents } from "../../../quartz.layout"
 import { FolderContent } from "../../components"
@@ -66,16 +67,36 @@ function computeFolderInfo(
 ): Record<SimpleSlug, ProcessedContent> {
   // Create default folder descriptions
   const folderInfo: Record<SimpleSlug, ProcessedContent> = Object.fromEntries(
-    [...folders].map((folder) => [
-      folder,
-      defaultProcessedContent({
-        slug: joinSegments(folder, "index") as FullSlug,
-        frontmatter: {
-          title: `${i18n(locale).pages.folderContent.folder}: ${folder}`,
-          tags: [],
-        },
-      }),
-    ]),
+    [...folders].map((folder) => {
+      const matchingFile = content.find(([, file]) => {
+        if (!file.data.filePath) return false
+        const fileFolder = path.dirname(file.data.filePath)
+        return simplifySlug(slugifyFilePath(fileFolder as any)) === folder
+      })
+
+      let folderTitle: string
+      if (matchingFile && matchingFile[1].data.filePath) {
+        folderTitle = path.basename(path.dirname(matchingFile[1].data.filePath))
+      } else {
+        folderTitle =
+          folder
+            .split("/")
+            .pop()
+            ?.replace(/--and--/g, " & ")
+            .replace(/-/g, " ") ?? folder
+      }
+
+      return [
+        folder,
+        defaultProcessedContent({
+          slug: joinSegments(folder, "index") as FullSlug,
+          frontmatter: {
+            title: folderTitle,
+            tags: [],
+          },
+        }),
+      ]
+    }),
   )
 
   // Update with actual content if available

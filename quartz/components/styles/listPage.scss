@@ -2,39 +2,98 @@
 
 ul.section-ul {
   list-style: none;
-  margin-top: 2em;
+  margin: 1.5rem 0 3.5rem 0;
   padding-left: 0;
 }
 
 li.section-li {
-  margin-bottom: 1em;
+  list-style: none;
+  margin: 0.35rem 0;
+  padding: 0.25rem 0;
 
   & > .section {
-    display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    width: 100%;
 
-    @media all and ($mobile) {
-      & > .tags {
-        display: none;
+    & .meta {
+      margin: 0 !important;
+      padding: 0 !important;
+      color: var(--color-tx-muted);
+      font-size: 0.88rem;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      flex-shrink: 0;
+      width: 7.5rem;
+      line-height: 1.6;
+      letter-spacing: 0.01em;
+
+      time {
+        color: inherit;
+        font-size: inherit;
       }
     }
 
-    & > .desc > h3 > a {
-      background-color: transparent;
+    & > .desc {
+      flex: 1 1 auto;
+      margin: 0 !important;
+      padding: 0 !important;
+      min-width: 0;
+
+      & > h3 {
+        margin: 0 !important;
+        padding: 0 !important;
+        font-size: 1.125rem;
+        font-weight: 400;
+        letter-spacing: -0.005em;
+        line-height: 1.6;
+        border: none;
+
+        & > a {
+          color: var(--color-tx-normal);
+          text-decoration: underline;
+          text-decoration-color: var(--color-ui-hover);
+          text-underline-offset: 0.18ex;
+          text-decoration-thickness: 1px;
+          transition: color 0.15s ease, text-decoration-color 0.15s ease;
+
+          &:hover {
+            color: var(--color-action);
+            text-decoration-color: currentColor;
+          }
+        }
+      }
     }
 
-    & .meta {
-      margin: 0 1em 0 0;
-      opacity: 0.6;
+    & > .tags {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      list-style: none;
+      flex-shrink: 0;
+      align-items: center;
+
+      @media all and ($mobile) {
+        display: none;
+      }
     }
   }
 }
 
 // modifications in popover context
 .popover .section {
-  grid-template-columns: fit-content(8em) 1fr !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 1rem !important;
+
+  & .meta {
+    width: 6.5rem !important;
+  }
 
   & > .tags {
-    display: none;
+    display: none !important;
   }
 }

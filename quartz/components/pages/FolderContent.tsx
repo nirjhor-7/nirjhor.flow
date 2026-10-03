@@ -107,7 +107,7 @@ export default ((opts?: Partial<FolderContentOptions>) => {
         <article class={classes}>{content}</article>
         <div class="page-listing">
           {options.showFolderCount && (
-            <p>
+            <p class="metadata font-ui">
               {i18n(cfg.locale).pages.folderContent.itemsUnderFolder({
                 count: allPagesInFolder.length,
               })}
