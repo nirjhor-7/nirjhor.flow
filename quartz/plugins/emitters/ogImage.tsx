@@ -39,6 +39,15 @@ async function generateSocialImage(
     console.warn(styleText("yellow", `Warning: Could not find icon at ${iconPath}`))
   }
 
+  const bgPath = joinSegments(QUARTZ, "static", "og-bg.jpg")
+  let bgBase64: string | undefined = undefined
+  try {
+    const bgData = await fs.readFile(bgPath)
+    bgBase64 = `data:image/jpeg;base64,${bgData.toString("base64")}`
+  } catch (err) {
+    // optional background
+  }
+
   const imageComponent = userOpts.imageStructure({
     cfg,
     userOpts,
@@ -47,6 +56,7 @@ async function generateSocialImage(
     fonts,
     fileData,
     iconBase64,
+    bgBase64,
   })
 
   const svg = await satori(imageComponent, {
@@ -62,7 +72,7 @@ async function generateSocialImage(
     },
   })
 
-  return sharp(Buffer.from(svg)).webp({ quality: 40 })
+  return sharp(Buffer.from(svg)).webp({ quality: 80 })
 }
 
 async function processOgImage(
