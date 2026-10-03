@@ -10,9 +10,7 @@ export const sharedPageComponents: SharedLayout = {
   ],
   afterBody: [Component.Backlinks()],
   footer: Component.Footer({
-    links: {
-      Contact: "mailto:hasan.nirjhor@yahoo.com",
-    },
+    links: {},
   }),
 }
 

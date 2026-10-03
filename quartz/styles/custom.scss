@@ -468,13 +468,17 @@ article a.internal,
 }
 
 // Steph Ango Underline Links with Cyan Hover
+a,
+a:link,
+a:visited,
 article a,
 .center a {
-  color: inherit !important;
+  color: var(--color-tx-normal) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--color-ui-hover) !important;
   text-underline-offset: 0.18ex !important;
   text-decoration-thickness: 1px !important;
+  font-weight: inherit !important;
   transition: color 0.15s ease, text-decoration-color 0.15s ease !important;
 
   &:hover {
@@ -659,7 +663,7 @@ pre {
   }
 }
 
-// Standard Clean Footer (Steph Ango style, NO GitHub)
+// Standard Clean Footer (Steph Ango style, NO GitHub, NO redundant Contact)
 footer {
   width: 100% !important;
   max-width: 100% !important;
@@ -672,11 +676,9 @@ footer {
   color: var(--color-tx-muted) !important;
   box-sizing: border-box !important;
   display: flex !important;
-  flex-direction: row !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   align-items: center !important;
-  flex-wrap: wrap !important;
-  gap: 1rem !important;
+  text-align: center !important;
 
   p {
     margin: 0 !important;
@@ -685,23 +687,6 @@ footer {
   }
 
   ul {
-    display: flex !important;
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    gap: 1.25rem !important;
-  }
-
-  a {
-    color: var(--color-tx-muted) !important;
-    text-decoration: underline !important;
-    text-decoration-color: var(--color-ui-normal) !important;
-    text-underline-offset: 0.15ex !important;
-    transition: color 0.15s ease !important;
-
-    &:hover {
-      color: var(--color-action) !important;
-      text-decoration-color: currentColor !important;
-    }
+    display: none !important;
   }
 }
