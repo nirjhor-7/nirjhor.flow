@@ -4,9 +4,9 @@ title: Now
 
 _What I'm doing now._
 
-- Navigating another semester of Computer Science undergrad.
-- Reading, writing, and tending to this shrine of thoughts.
-- Indulging in music, cinema, and quiet reflection.
+- Figure out my life.
+
+
 
 ---
 

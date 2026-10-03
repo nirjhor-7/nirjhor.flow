@@ -24,8 +24,9 @@ export default ((opts?: Partial<Options>) => {
             link.startsWith("http") || link.startsWith("mailto")
               ? link
               : resolveRelative(fileData.slug!, link as FullSlug)
+          const isActive = fileData.slug === link
           return (
-            <a href={href} class="nav-link">
+            <a href={href} class={classNames("nav-link", isActive ? "active" : undefined)}>
               {text}
             </a>
           )

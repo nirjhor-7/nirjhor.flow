@@ -201,25 +201,40 @@ header .spacer {
 }
 
 // Header Navigation Links (About, Now matching Steph Ango's navbar)
+.page-header header .nav-links,
+header .nav-links,
 .nav-links {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 1.25rem !important;
-  margin: 0 0.5rem 0 0 !important;
+  gap: 1.75rem !important;
+  margin: 0 1.5rem 0 0 !important;
   padding: 0 !important;
 }
 
-.nav-link {
+.page-header header .nav-link,
+header .nav-link,
+.nav-link,
+a.nav-link {
   color: var(--color-tx-muted) !important;
   font-size: 0.95rem !important;
   text-decoration: none !important;
+  text-decoration-line: none !important;
+  border-bottom: none !important;
   font-family: inherit !important;
   line-height: 1 !important;
+  display: inline-block !important;
+  padding: 0.2rem 0 !important;
   transition: color 0.15s ease !important;
 
   &:hover {
     color: var(--color-action) !important;
     text-decoration: none !important;
+    text-decoration-line: none !important;
+    border-bottom: none !important;
+  }
+
+  &.active {
+    color: var(--color-tx-normal) !important;
   }
 }
 
@@ -490,12 +505,12 @@ article a.internal,
   line-height: inherit !important;
 }
 
-// Steph Ango Underline Links with Cyan Hover
-a,
-a:link,
-a:visited,
-article a,
-.center a {
+// Steph Ango Underline Links with Cyan Hover (scoped strictly to paragraph, list, and inline body text)
+article p a:not(.plain):not([role="anchor"]),
+article li a:not(.plain):not([role="anchor"]),
+article div a:not(.plain):not([role="anchor"]),
+.center article p a:not(.plain):not([role="anchor"]),
+.center article li a:not(.plain):not([role="anchor"]) {
   color: var(--color-tx-normal) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--color-ui-hover) !important;
@@ -508,12 +523,46 @@ article a,
     color: var(--color-action) !important;
     text-decoration-color: currentColor !important;
   }
+}
 
-  &[role="anchor"] {
+// Header logo, nav links, headings, section labels, anchor links and plain links NEVER get underlined
+.page-header header a,
+header a,
+.page-title a,
+.nav-link,
+a.nav-link,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a,
+article h1 a,
+article h2 a,
+article h3 a,
+article h4 a,
+article h5 a,
+article h6 a,
+article a[role="anchor"],
+p.section-label a,
+.section-label a,
+a.plain {
+  text-decoration: none !important;
+  text-decoration-line: none !important;
+  border-bottom: none !important;
+  color: inherit !important;
+
+  &:hover {
+    color: var(--color-action) !important;
     text-decoration: none !important;
-    opacity: 0;
-    transition: opacity 0.15s ease;
+    text-decoration-line: none !important;
+    border-bottom: none !important;
   }
+}
+
+article a[role="anchor"] {
+  opacity: 0;
+  transition: opacity 0.15s ease;
 }
 
 h1:hover a[role="anchor"],
