@@ -1,7 +1,7 @@
 @use "./base.scss";
 
 // ==============================================================================
-// SWISS MINIMALIST (Dieter Rams / International Typographic Style)
+// SWISS MINIMALIST (Clean, Standard Digital Garden Typography)
 // ==============================================================================
 
 :root {
@@ -16,7 +16,7 @@
   --ui-muted: #a1a1aa;
 }
 
-// Global page reset & guaranteed central column alignment
+// Global page reset & standard central reading column
 html {
   width: 100%;
   overflow-x: hidden;
@@ -44,10 +44,10 @@ body {
   display: none !important;
 }
 
-// Pure Single Column Layout (Strict Swiss grid & centering across all viewports)
+// Standard Central Reading Column
 #quartz-root.page,
 .page {
-  max-width: 680px !important;
+  max-width: 720px !important;
   width: 100% !important;
   margin: 0 auto !important;
   padding: 0 1.5rem 5rem !important;
@@ -55,7 +55,7 @@ body {
   display: block !important;
 }
 
-// Override Quartz 3-column CSS Grid to a clean vertical block
+// Standard single column block layout
 #quartz-root.page > #quartz-body,
 .page > #quartz-body,
 #quartz-body {
@@ -64,13 +64,11 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+  padding: 0 !important;
   grid-template-columns: none !important;
   grid-template-areas: none !important;
   column-gap: 0 !important;
   row-gap: 0 !important;
-  padding: 0 !important;
   box-sizing: border-box !important;
 }
 
@@ -81,14 +79,12 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   margin: 0 !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
   grid-area: auto !important;
   padding: 0 !important;
   box-sizing: border-box !important;
 }
 
-// Hide extraneous horizontal rules emitted by Quartz core
+// Hide extraneous duplicate horizontal rules emitted by Quartz core
 .center > hr {
   display: none !important;
 }
@@ -114,14 +110,14 @@ header {
   align-items: center !important;
   justify-content: space-between !important;
   width: 100% !important;
-  padding: 2.25rem 0 1.25rem !important;
-  margin: 0 0 2.5rem 0 !important;
+  padding: 2rem 0 1.25rem !important;
+  margin: 0 0 2rem 0 !important;
   border-bottom: 1px solid var(--ui-border) !important;
   gap: 0.75rem !important;
   box-sizing: border-box !important;
 }
 
-// Page title / Logo - strictly no border-bottom, no underline
+// Page title / Logo
 .page-title,
 h2.page-title,
 .page-header header .page-title,
@@ -275,7 +271,7 @@ header .darkmode {
 
 // Article Title & Metadata
 h1.article-title {
-  font-size: 2.25rem !important;
+  font-size: 2.15rem !important;
   font-weight: 700 !important;
   letter-spacing: -0.035em !important;
   line-height: 1.2 !important;
@@ -300,7 +296,7 @@ h1.article-title {
   }
 }
 
-// Typography & Content Flow
+// Typography & Content Flow (Standard, Clean, Legible)
 article {
   width: 100% !important;
   max-width: 100% !important;
@@ -314,49 +310,52 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 2.15rem !important;
+  font-size: 2rem !important;
   font-weight: 700 !important;
-  letter-spacing: -0.035em !important;
-  margin: 1.5rem 0 1rem !important;
+  letter-spacing: -0.03em !important;
+  margin: 2rem 0 1rem !important;
 }
 
-// Remove redundant top margin from first heading in article
 article > h1:first-child,
 article > h2:first-child {
   margin-top: 0 !important;
 }
 
-// Clean spacing when h2 directly follows h1
-article > h1 + h2 {
-  margin-top: 2rem !important;
-}
-
 h2 {
-  font-size: 1.25rem !important;
+  font-size: 1.35rem !important;
   font-weight: 600 !important;
   letter-spacing: -0.02em !important;
-  margin-top: 3rem !important;
-  margin-bottom: 0.85rem !important;
-  padding-bottom: 0.4rem !important;
-  border-bottom: 1px solid var(--ui-border) !important;
+  margin: 2.25rem 0 0.85rem !important;
+  padding: 0 !important;
+  border: none !important;
 }
 
 h3 {
-  font-size: 1.1rem !important;
+  font-size: 1.15rem !important;
   font-weight: 600 !important;
-  letter-spacing: -0.02em !important;
-  margin-top: 2rem !important;
-  margin-bottom: 0.5rem !important;
+  letter-spacing: -0.015em !important;
+  margin: 1.75rem 0 0.5rem !important;
+  padding: 0 !important;
+  border: none !important;
 }
 
 p {
-  line-height: 1.8 !important;
+  line-height: 1.75 !important;
   font-size: 1.05rem !important;
   margin: 1.25rem 0 !important;
   color: var(--darkgray) !important;
 }
 
-// RESET ALL WIKILINK BACKGROUND HIGHLIGHTS / PILLS
+// Horizontal dividers (Standard markdown ---)
+hr {
+  display: block !important;
+  width: 100% !important;
+  margin: 2.25rem 0 !important;
+  border: none !important;
+  border-top: 1px solid var(--ui-border) !important;
+}
+
+// Clear Quartz default pill / badge styling on wikilinks
 a.internal,
 article a.internal,
 .backlinks a.internal {
@@ -365,7 +364,6 @@ article a.internal,
   padding: 0 !important;
   border-radius: 0 !important;
   line-height: inherit !important;
-  font-weight: 500 !important;
 }
 
 // Standard Content Links
@@ -373,11 +371,12 @@ article a {
   color: var(--dark) !important;
   text-decoration: underline !important;
   text-decoration-color: var(--ui-link-underline) !important;
-  text-underline-offset: 3.5px !important;
+  text-underline-offset: 3px !important;
   text-decoration-thickness: 1px !important;
   transition: text-decoration-color 0.15s ease, color 0.15s ease !important;
 
   &:hover {
+    color: var(--dark) !important;
     text-decoration-color: var(--dark) !important;
   }
 
@@ -395,12 +394,12 @@ h4:hover a[role="anchor"] {
   opacity: 0.5 !important;
 }
 
-// Blockquotes (Dieter Rams minimalist vertical bar)
+// Blockquotes (Minimalist vertical bar)
 blockquote {
   border-left: 2px solid var(--dark) !important;
   background: transparent !important;
   padding: 0.25rem 0 0.25rem 1.25rem !important;
-  margin: 2rem 0 !important;
+  margin: 1.75rem 0 !important;
   font-style: italic !important;
   color: var(--darkgray) !important;
 
@@ -410,15 +409,15 @@ blockquote {
   }
 }
 
-// Standard Lists (articles)
+// Standard Lists (Universal clean bulleted lists across all pages)
 article ul {
-  padding-left: 1.25rem !important;
-  margin: 1.25rem 0 !important;
-  list-style: disc !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 1.5rem !important;
+  list-style-type: disc !important;
 
   > li {
     line-height: 1.75 !important;
-    margin: 0.45rem 0 !important;
+    margin: 0.4rem 0 !important;
     padding: 0 !important;
     border: none !important;
     color: var(--darkgray) !important;
@@ -426,43 +425,13 @@ article ul {
 }
 
 article ol {
-  padding-left: 1.25rem !important;
-  margin: 1.25rem 0 !important;
+  padding-left: 1.5rem !important;
+  margin: 1rem 0 1.5rem !important;
 
   > li {
     line-height: 1.75 !important;
-    margin: 0.45rem 0 !important;
+    margin: 0.4rem 0 !important;
     color: var(--darkgray) !important;
-  }
-}
-
-// Index / Directory Page Lists (Clean, quiet, flush Swiss alignment - NO broken borders)
-body[data-slug="index"] article ul {
-  padding-left: 0 !important;
-  list-style: none !important;
-  margin: 0.85rem 0 2rem !important;
-
-  > li {
-    padding: 0.35rem 0 !important;
-    margin: 0 !important;
-    border: none !important;
-    border-bottom: none !important;
-    color: var(--darkgray) !important;
-    line-height: 1.7 !important;
-
-    > a {
-      color: var(--dark) !important;
-      text-decoration: none !important;
-      font-weight: 500 !important;
-      transition: color 0.15s ease, text-decoration 0.15s ease !important;
-
-      &:hover {
-        color: var(--dark) !important;
-        text-decoration: underline !important;
-        text-underline-offset: 3.5px !important;
-        text-decoration-color: var(--dark) !important;
-      }
-    }
   }
 }
 
@@ -564,7 +533,7 @@ pre {
   }
 }
 
-// Minimal Swiss Footer
+// Standard Clean Footer
 footer {
   width: 100% !important;
   max-width: 100% !important;
