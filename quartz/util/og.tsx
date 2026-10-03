@@ -200,7 +200,7 @@ export const defaultImage: SocialImageOptions["imageStructure"] = ({
   const isHome = fileData.slug === "index"
   const cleanTitle = isHome
     ? cfg.pageTitle
-    : (fileData.frontmatter?.title ?? title).replace(/\s*•\s*n\\rjhor$/, "").trim()
+    : (fileData.frontmatter?.title ?? title).replace(/\s*•\s*nirjhor$/, "").trim()
 
   const metaText = isHome
     ? "nirjhor.flow"
