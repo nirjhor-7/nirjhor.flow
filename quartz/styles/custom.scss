@@ -200,6 +200,29 @@ header .spacer {
   flex: 1 1 auto !important;
 }
 
+// Header Navigation Links (About, Now matching Steph Ango's navbar)
+.nav-links {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 1.25rem !important;
+  margin: 0 0.5rem 0 0 !important;
+  padding: 0 !important;
+}
+
+.nav-link {
+  color: var(--color-tx-muted) !important;
+  font-size: 0.95rem !important;
+  text-decoration: none !important;
+  font-family: inherit !important;
+  line-height: 1 !important;
+  transition: color 0.15s ease !important;
+
+  &:hover {
+    color: var(--color-action) !important;
+    text-decoration: none !important;
+  }
+}
+
 // Control buttons (Darkmode pill switch matching Steph Ango's theme toggle)
 header .darkmode,
 .darkmode {

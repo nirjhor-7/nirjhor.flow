@@ -13,7 +13,7 @@ Bonjour! Wanderer! How's it going for you? It's been sometime. Long real time is
 
 <p class="section-label">Topics</p>
 
-[[Project Hail Mary & End of another semester|cinema]], [[Happy 20th, Spotify|music]], [[Breath|reflections]], [[Train Dreams|verses]], [[When|life]], [[Get in Touch|contact]]
+[[Project Hail Mary & End of another semester|cinema]], [[Happy 20th, Spotify|music]], [[Breath|reflections]], [[Train Dreams|verses]], [[When|life]], [[about|about]], [[now|now]]
 
 ---
 
@@ -33,19 +33,3 @@ Bonjour! Wanderer! How's it going for you? It's been sometime. Long real time is
 - <span class="date">2026 · 04</span> [[Train Dreams]]
 - <span class="date">2026 · 04</span> [[Diluted Eyes]]
 - <span class="date">2026 · 04</span> [[Well, Iris]]
-
----
-
-<p class="section-label">About Me</p>
-
-**Hello, wanderer! Nirjhor here.**
-
-Currently navigating the ugly chaos of a Computer Science undergrad at a so-called top private university in Bangladesh. Trying not to lose myself to the black hole of trivialities by indulging in reading, writing, music, cinema, and quiet reflection.
-
-This is my shrine of thoughts.
-
----
-
-<p class="section-label">Contact</p>
-
-[hasan.nirjhor@yahoo.com](mailto:hasan.nirjhor@yahoo.com)

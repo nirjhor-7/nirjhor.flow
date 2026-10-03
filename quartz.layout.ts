@@ -6,6 +6,12 @@ export const sharedPageComponents: SharedLayout = {
   header: [
     Component.PageTitle(),
     Component.Spacer(),
+    Component.NavLinks({
+      links: {
+        About: "about",
+        Now: "now",
+      },
+    }),
     Component.Darkmode(),
   ],
   afterBody: [Component.Backlinks()],

@@ -27,6 +27,7 @@ import StarryBackground from "./StarryBackground"
 import QuickBrowse from "./QuickBrowse"
 import PrevNext from "./PrevNext"
 import AllNotesTimeline from "./AllNotesTimeline"
+import NavLinks from "./NavLinks"
 
 export {
   ArticleTitle,
@@ -58,4 +59,5 @@ export {
   QuickBrowse,
   PrevNext,
   AllNotesTimeline,
+  NavLinks,
 }
