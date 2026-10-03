@@ -2,11 +2,11 @@
 title: Now
 ---
 
-_What I'm doing now._
+### What I'm doing now.
 
-- Figuring out my life?
-
-
+*building* [Later, Gators](www.latergators.live)
+*figuring out life.*
+*writing.*
 
 ---
 
