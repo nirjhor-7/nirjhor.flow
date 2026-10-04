@@ -15,7 +15,7 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
       fileData.slug === "index"
-        ? cfg.pageTitle
+        ? (cfg.pageTitle === "n\\rjhor" ? "nirjhor" : cfg.pageTitle)
         : (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
     const description =
       fileData.frontmatter?.socialDescription ??
