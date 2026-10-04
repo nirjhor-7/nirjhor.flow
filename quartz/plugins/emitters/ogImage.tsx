@@ -170,6 +170,7 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
             const ogImagePath = userDefinedOgImagePath ?? generatedOgImagePath ?? defaultOgImagePath
             const ext = getFileExtension(ogImagePath)?.replace(/^\./, "") ?? "png"
             const ogImageMimeType = `image/${ext}`
+            const ogImageUrl = `${ogImagePath}?v=${ctx.buildId}`
             return (
               <>
                 {!userDefinedOgImagePath && (
@@ -179,9 +180,9 @@ export const CustomOgImages: QuartzEmitterPlugin<Partial<SocialImageOptions>> = 
                   </>
                 )}
 
-                <meta property="og:image" content={ogImagePath} />
-                <meta property="og:image:url" content={ogImagePath} />
-                <meta name="twitter:image" content={ogImagePath} />
+                <meta property="og:image" content={ogImageUrl} />
+                <meta property="og:image:url" content={ogImageUrl} />
+                <meta name="twitter:image" content={ogImageUrl} />
                 <meta property="og:image:type" content={ogImageMimeType} />
               </>
             )
