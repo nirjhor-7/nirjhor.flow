@@ -5,6 +5,11 @@ import { googleFontHref, googleFontSubsetHref } from "../util/theme"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { unescapeHTML } from "../util/escape"
 import { CustomOgImagesEmitterName } from "../plugins/emitters/ogImage"
+function preventCarriageReturnEscape(str: string): string {
+  // Prevent parsers (like Telegram/Discord) from interpreting \r as a carriage return escape (which renders as a whitespace)
+  return str.replace(/\\r/g, "\\\u200Br")
+}
+
 export default (() => {
   const Head: QuartzComponent = ({
     cfg,
@@ -13,10 +18,12 @@ export default (() => {
     ctx,
   }: QuartzComponentProps) => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
-    const title =
+    const rawTitle =
       fileData.slug === "index"
         ? cfg.pageTitle
         : (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
+    const title = preventCarriageReturnEscape(rawTitle)
+    const siteName = preventCarriageReturnEscape(cfg.pageTitle)
     const description =
       fileData.frontmatter?.socialDescription ??
       fileData.frontmatter?.description ??
@@ -55,8 +62,8 @@ export default (() => {
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta property="og:site_name" content={cfg.pageTitle} />
-        <meta name="og:site_name" content={cfg.pageTitle} />
+        <meta property="og:site_name" content={siteName} />
+        <meta name="og:site_name" content={siteName} />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
