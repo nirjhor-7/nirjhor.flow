@@ -15,7 +15,7 @@ export default (() => {
     const titleSuffix = cfg.pageTitleSuffix ?? ""
     const title =
       fileData.slug === "index"
-        ? (cfg.pageTitle === "n\\rjhor" ? "nirjhor" : cfg.pageTitle)
+        ? cfg.pageTitle
         : (fileData.frontmatter?.title ?? i18n(cfg.locale).propertyDefaults.title) + titleSuffix
     const description =
       fileData.frontmatter?.socialDescription ??
@@ -55,7 +55,8 @@ export default (() => {
         <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossOrigin="anonymous" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta name="og:site_name" content="nirjhor"></meta>
+        <meta property="og:site_name" content={cfg.pageTitle} />
+        <meta name="og:site_name" content={cfg.pageTitle} />
         <meta property="og:title" content={title} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
