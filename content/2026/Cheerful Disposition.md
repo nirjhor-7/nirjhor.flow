@@ -6,5 +6,5 @@ tags:
   - daily
 draft: true
 ---
-Greetings, wanderer!
+
 
