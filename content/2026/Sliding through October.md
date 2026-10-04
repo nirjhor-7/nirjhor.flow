@@ -4,9 +4,9 @@ date: 2026-10-04
 tags:
   - "#journal"
   - daily
-draft: true
+draft: false
 ---
-Woke up in a hurry to attend a friends birthday party. Missed the only class of the day sleeping it off. The past night was a strange challenge. Went to sleep on a usual time(i am sleeping off 4am these days), but the mind was full of storm. What can I say? It was a hard sleep. However, I wanted to sleep more when I woke up. Feeling drained isn't surprising. What was surprising is multiple missed calls and texts, cause I forgot about the party. So, had to rush to the occasion.
+Woke up in a hurry to attend a friends birthday party. Missed the only class of the day sleeping it off. The past night was a strange challenge. Went to sleep on a usual time(i am sleeping off 4am these days), but the mind was full of storm. What can I say? It was a hard sleep. However, I wanted to sleep more when I woke up. Feeling drained isn't surprising. What's surprising is multiple missed calls and texts, cause I forgot about the party. So, had to rush to the occasion.
 It was fun, chaotic and reckless. The standard here is crushing eggs and showering the birthday boy with flour or whatever's clever. Well, no guys survived it. It was back and forth hitting one another. Ridiculous as it sounds. One heck of a day. Glad to be a part of it. 
 
 Read a few essays of Paul Graham's through the post evening. 
@@ -19,5 +19,5 @@ Here's some food for thoughts.
 
 [When to do what you love](https://paulgraham.com/when.html), Paul Graham
 
-Hoping to make the most out of what's left of 2026.
-Learning 
+Hoping for a deep, restful sleep.
+
