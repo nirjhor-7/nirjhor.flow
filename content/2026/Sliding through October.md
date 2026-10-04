@@ -9,7 +9,15 @@ draft: true
 Woke up in a hurry to attend a friends birthday party. Missed the only class of the day sleeping it off. The past night was a strange challenge. Went to sleep on a usual time(i am sleeping off 4am these days), but the mind was full of storm. What can I say? It was a hard sleep. However, I wanted to sleep more when I woke up. Feeling drained isn't surprising. What was surprising is multiple missed calls and texts, cause I forgot about the party. So, had to rush to the occasion.
 It was fun, chaotic and reckless. The standard here is crushing eggs and showering the birthday boy with flour or whatever's clever. Well, no guys survived it. It was back and forth hitting one another. Ridiculous as it sounds. One heck of a day. Glad to be a part of it. 
 
-Read some blogs of Paul Graham's through the post evening. 
+Read a few essays of Paul Graham's through the post evening. 
 
+Here's some food for thoughts.
+
+> What do you do in the face of uncertainty? Get more certainty. And probably the best way to do that is to try working on things you're interested in. That will get you more information about how interested you are in them, how good you are at them, and how much scope they offer for ambition.
+> 
 > One useful trick for judging different kinds of work is to look at who your colleagues will be. You'll become like whoever you work with. Do you want to become like these people?
-P
+
+[When to do what you love](https://paulgraham.com/when.html), Paul Graham
+
+Hoping to make the most out of what's left of 2026.
+Learning 
