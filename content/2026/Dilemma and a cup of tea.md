@@ -5,3 +5,7 @@ tags:
   - journal
 draft: true
 ---
+Familiar quirky hours,
+Restless faces around
+
+Tea's been served,
