@@ -29,7 +29,9 @@ with a Cup of tea in hand
 Stranger in reverie
 stares in the mirror
 
-Deep in avalanche,
-Unto Hitherto unknown 
+Fading in avalanche,
+Into Hitherto unknown.
+
+
 
 
