@@ -26,5 +26,7 @@ for unpromised love
 Cosmic synth in heart
 with a Cup of tea in hand
 
+Stranger in black,
+Stares in the mirror
 
 
