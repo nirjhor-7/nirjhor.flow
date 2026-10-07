@@ -11,11 +11,20 @@ Restless faces around
 Brewing madness,
 Tea's been served
 
-Gazing behind the wall,
+Gazing upon the sky,
 Washed in dilemmas
 
 Fluttering winds,
 Shattered wings
 
-Crying for rain
-my cup of tea,
+Velvet agony
+for promised Rain
+
+Perplexed flings
+for unpromised love
+
+Cosmic synth in heart
+with a Cup of tea in hand
+
+
+
