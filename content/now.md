@@ -6,7 +6,7 @@ title: Now
 
 *building* [Later, Gators](https://www.latergators.live/)
 <br>*figuring out life.*
-<br> *writing.*
+
 
 ---
 
