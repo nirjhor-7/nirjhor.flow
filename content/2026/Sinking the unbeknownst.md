@@ -22,7 +22,7 @@ I want to say,
 It's your own precious life ending one minute at a time, what are you waiting for? 
 
 More importantly, get yourself rid off of things that doesn't matter.
-and Most importantly, get busy doing things that matters to 'you'!
+and Most importantly, get busy doing things that matter to 'you'!
 
 Life's a quite eclectic full of adventure and it's very important to have fun and enjoy the ride!
 
