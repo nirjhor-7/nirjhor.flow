@@ -3,11 +3,11 @@ title: Sinking the unbeknownst
 date: 2026-11-02
 tags:
   - journal
-draft: true
+draft: false
 ---
 The off days were great. 
 Returned to dorm with familiar mood. 
-Then well, just when the midterms about to start, fever took over.
+Then well, just when the midterms about to start, drowning fever took over.
 Tried my best not to miss the Algorithm exam. 
 I hope everything works out fine. All alright.
 Don't want to deep dive into courses and college stuffs anyway.
@@ -29,4 +29,15 @@ Life's a quite eclectic full of adventure and it's very important to have fun an
 You are going to die anyway. 
 
 I want you to realize what a blessing its to be in a good health. 
-Waking up in the morning, 
+Waking up in the morning, feeling functional! 
+It's the most amazing thing.
+You only realize it when you fell sick.
+
+So be grateful for life.
+Appreciate it and courage up forward.
+
+Don't kill yourself.
+Have a cup of coffee.
+
+Stay upwind.
+
