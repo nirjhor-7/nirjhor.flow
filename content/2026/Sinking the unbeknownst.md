@@ -37,6 +37,7 @@ So be grateful for life.
 Appreciate it and courage up forward.
 
 Don't kill yourself.
+Go for a walk.
 Have a cup of coffee.
 
 Stay upwind.
