@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
       links: {
         About: "about",
         Now: "now",
+        RSS: "https://nirjhor-7.github.io/nirjhor.flow/index.xml",
       },
     }),
     Component.Darkmode(),
