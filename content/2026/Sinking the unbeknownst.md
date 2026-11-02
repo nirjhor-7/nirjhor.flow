@@ -2,6 +2,7 @@
 title: Sinking the unbeknownst
 date: 2026-11-02
 tags:
+  - journal
 draft: true
 ---
 The off days were great. 
@@ -19,3 +20,13 @@ All alright, I remind myself.
 I want to say, 
 "Go Live! On your own terms, audaciously."
 It's your own precious life ending one minute at a time, what are you waiting for? 
+
+More importantly, get yourself rid off of things that doesn't matter.
+and Most importantly, get busy doing things that matters to 'you'!
+
+Life's a quite eclectic full of adventure and it's very important to have fun and enjoy the ride!
+
+You are going to die anyway. 
+
+I want you to realize what a blessing its to be in a good health. 
+Waking up in the morning, 
