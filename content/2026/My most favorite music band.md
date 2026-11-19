@@ -1,3 +1,9 @@
+---
+title:
+date: 2026-11-07
+tags:
+draft: true
+---
 i know, i am late to the party. but just in time perhaps?
 discovered  Linkin Park around 2018.
 listened and knew few of their greats to the core.
@@ -21,4 +27,5 @@ Have you listened to In the End - demo?
 
 
 https://youtu.be/AhqEeZaGOLk?si=s8QokSxMRUdHMQxN
+
 
