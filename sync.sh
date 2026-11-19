@@ -5,7 +5,7 @@
 set -e
 
 # Change to the project root directory
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_DIR="$(cd "$(dirname "$(realpath "${BASH_SOURCE[0]}")")" && pwd)"
 cd "$SCRIPT_DIR"
 
 # Ensure mise node environment is loaded if available
@@ -54,7 +54,7 @@ case "$1" in
     ;;
   --obsidian|-o)
     echo -e "${BLUE}==> Launching Obsidian...${NC}"
-    obsidian "obsidian://open?vault=flows.sh" 2>/dev/null || obsidian "$SCRIPT_DIR/flows.sh" &
+    obsidian "obsidian://open?path=$(realpath "$SCRIPT_DIR/content")" 2>/dev/null || obsidian "$SCRIPT_DIR/content" &
     ;;
   *)
     COMMIT_MSG="$*"
@@ -67,6 +67,7 @@ case "$1" in
     else
       npx quartz sync
     fi
+    git checkout main && git merge v4 --ff-only && git push origin main && git checkout v4 2>/dev/null || true
     echo -e "${GREEN}✓ All synced and pushed to your site!${NC}"
     ;;
 esac

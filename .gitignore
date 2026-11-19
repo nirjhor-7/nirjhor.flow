@@ -10,3 +10,4 @@ private/
 .replit
 replit.nix
 flows.sh
+content/sync.sh
