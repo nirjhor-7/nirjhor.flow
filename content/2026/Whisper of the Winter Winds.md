@@ -22,7 +22,7 @@ How long?
 With only 42 days remaining of the year, all I wish myself is a lively life.
 Do poetic justice to your soul, run for your life.
 Live.
-Breath.
+Breathe.
 Write.
 Un-become everything you are not.
 Burn the bridge.
